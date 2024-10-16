@@ -1,4 +1,4 @@
-package dipae_5thtemp.askisi11;
+package askisi11.askisi11;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -12,7 +12,7 @@ public class HelloApplication extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        stage.setTitle("A Button example");
+        stage.setTitle("A Button Example");
         stage.setScene(scene);
         stage.show();
     }

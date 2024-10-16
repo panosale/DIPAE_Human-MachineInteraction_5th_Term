@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" prefHeight="256.0" prefWidth="355.0" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.12" fx:controller="askisi11.askisi11.HelloController">
+  <padding>
+    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+  </padding>
+  <Button fx:id="firstButton" onAction="#onFirstButtonClick" text="First button" />
+   <Button fx:id="secondButton" mnemonicParsing="false" onAction="#onSecondButtonClick" text="Second Button" />
+
+  <Label fx:id="welcomeText" prefHeight="26.0" prefWidth="217.0" />
+</VBox>
