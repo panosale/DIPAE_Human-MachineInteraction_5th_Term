@@ -52,6 +52,7 @@ public class Askisi2_1 extends javax.swing.JFrame {
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
         txtfld_CalcBox.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
+        txtfld_CalcBox.setEnabled(false);
         txtfld_CalcBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtfld_CalcBoxActionPerformed(evt);
@@ -333,41 +334,103 @@ public class Askisi2_1 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void addNumber2CalcBox(int num) {
+        if (actionPressed != 0) {
+            txtfld_CalcBox.setText("");
+        }
+            
+        txtfld_CalcBox.setText(txtfld_CalcBox.getText() + num);        
+    }
+    private void action2Perform(short actionID, String num) {
+        if (tmpNumber1 == 0 && !txtfld_CalcBox.getText().isEmpty()) {
+            tmpNumber1 = Double.valueOf(num);
+            switch (actionID) {
+                    case 1 -> { 
+                        txtfld_CalcBox.setText("+");
+                        actionPressed = 1;
+                }
+                    case 2 -> { 
+                        txtfld_CalcBox.setText("-");
+                        actionPressed = 2;
+                }
+                    case 3 -> {
+                        txtfld_CalcBox.setText("*");
+                        actionPressed = 3;
+                }
+                    case 4 -> {
+                        txtfld_CalcBox.setText("/");
+                        actionPressed = 4;
+                }
+            }
+        }
+        else {
+            if (actionPressed != 0) {
+                tmpNumber2 = Double.valueOf(txtfld_CalcBox.getText());
+                switch (actionPressed) {
+                        case 1: 
+                            txtfld_CalcBox.setText(String.valueOf(tmpNumber1 + tmpNumber2));
+                            break;
+                        case 2: 
+                            txtfld_CalcBox.setText(String.valueOf(tmpNumber1 - tmpNumber2));
+                            break;
+                        case 3:
+                            txtfld_CalcBox.setText(String.valueOf(tmpNumber1 * tmpNumber2));
+                            break;
+                        case 4: if (tmpNumber2 == 0) {
+                                    txtfld_CalcBox.setText("Div by zero!");
+                        }
+                                else
+                                    txtfld_CalcBox.setText(String.valueOf(tmpNumber1 / tmpNumber2));
+                        break;
+
+                }
+            }
+        }
+    }
     private void btn_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_1ActionPerformed
         // TODO add your handling code here:
+        addNumber2CalcBox(1);
     }//GEN-LAST:event_btn_1ActionPerformed
 
     private void btn_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_2ActionPerformed
         // TODO add your handling code here:
+        addNumber2CalcBox(2);
     }//GEN-LAST:event_btn_2ActionPerformed
 
     private void btn_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_3ActionPerformed
         // TODO add your handling code here:
+        addNumber2CalcBox(3);
     }//GEN-LAST:event_btn_3ActionPerformed
 
     private void btn_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_4ActionPerformed
         // TODO add your handling code here:
+        addNumber2CalcBox(4);
     }//GEN-LAST:event_btn_4ActionPerformed
 
     private void btn_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_5ActionPerformed
         // TODO add your handling code here:
+        addNumber2CalcBox(5);
     }//GEN-LAST:event_btn_5ActionPerformed
 
     private void btn_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_6ActionPerformed
         // TODO add your handling code here:
+        addNumber2CalcBox(6);
     }//GEN-LAST:event_btn_6ActionPerformed
 
     private void btn_7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_7ActionPerformed
         // TODO add your handling code here:
+        addNumber2CalcBox(7);
     }//GEN-LAST:event_btn_7ActionPerformed
 
     private void btn_8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_8ActionPerformed
         // TODO add your handling code here:
+        addNumber2CalcBox(8);
     }//GEN-LAST:event_btn_8ActionPerformed
 
     private void btn_PowerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_PowerActionPerformed
         // TODO add your handling code here:
         buttonsState = !buttonsState;
+        txtfld_CalcBox.setEnabled(buttonsState);
         btn_0.setEnabled(buttonsState);
         btn_1.setEnabled(buttonsState);
         btn_2.setEnabled(buttonsState);
@@ -393,6 +456,7 @@ public class Askisi2_1 extends javax.swing.JFrame {
 
     private void btn_0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_0ActionPerformed
         // TODO add your handling code here:
+        addNumber2CalcBox(0);
     }//GEN-LAST:event_btn_0ActionPerformed
 
     private void txtfld_CalcBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfld_CalcBoxActionPerformed
@@ -401,30 +465,43 @@ public class Askisi2_1 extends javax.swing.JFrame {
 
     private void btn_9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_9ActionPerformed
         // TODO add your handling code here:
+        addNumber2CalcBox(9);
     }//GEN-LAST:event_btn_9ActionPerformed
 
     private void btn_CActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CActionPerformed
         // TODO add your handling code here:
+        buttonsState = false;
+        dotAdded = false;
+        tmpNumber1 = 0;
+        txtfld_CalcBox.setText("");
     }//GEN-LAST:event_btn_CActionPerformed
 
     private void btn_PlusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_PlusActionPerformed
         // TODO add your handling code here:
+        action2Perform((short)1, txtfld_CalcBox.getText());
     }//GEN-LAST:event_btn_PlusActionPerformed
 
     private void btn_MinusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_MinusActionPerformed
         // TODO add your handling code here:
+        action2Perform((short)2, txtfld_CalcBox.getText());
     }//GEN-LAST:event_btn_MinusActionPerformed
 
     private void btn_MultiplyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_MultiplyActionPerformed
         // TODO add your handling code here:
+        action2Perform((short)3, txtfld_CalcBox.getText());
     }//GEN-LAST:event_btn_MultiplyActionPerformed
 
     private void btn_DivisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_DivisionActionPerformed
         // TODO add your handling code here:
+        action2Perform((short)4, txtfld_CalcBox.getText());
     }//GEN-LAST:event_btn_DivisionActionPerformed
 
     private void btn_EqualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_EqualActionPerformed
         // TODO add your handling code here:
+        if (!txtfld_CalcBox.getText().isEmpty())
+            action2Perform((short)5, txtfld_CalcBox.getText());
+        else
+            txtfld_CalcBox.setText("0");
     }//GEN-LAST:event_btn_EqualActionPerformed
 
     private void btn_DotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_DotActionPerformed
@@ -472,6 +549,8 @@ public class Askisi2_1 extends javax.swing.JFrame {
     }
     boolean buttonsState = false;
     boolean dotAdded = false;
+    double tmpNumber1, tmpNumber2 = 0;
+    byte actionPressed = 0;
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_0;
