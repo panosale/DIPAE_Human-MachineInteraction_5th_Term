@@ -26,34 +26,29 @@ public class Askisi1_1 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblMessage = new javax.swing.JLabel();
-        btnFirst = new javax.swing.JButton();
-        btnSecond = new javax.swing.JButton();
+        lbl_Message = new javax.swing.JLabel();
+        btn_First = new javax.swing.JButton();
+        btn_Second = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("A Button Example");
 
-        lblMessage.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        lblMessage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblMessage.setText("Press a button");
-        lblMessage.setToolTipText("Press a button please");
+        lbl_Message.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lbl_Message.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_Message.setText("Press a button");
+        lbl_Message.setToolTipText("Press a button please");
 
-        btnFirst.setText("First button");
-        btnFirst.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnFirstMouseClicked(evt);
-            }
-        });
-        btnFirst.addActionListener(new java.awt.event.ActionListener() {
+        btn_First.setText("First button");
+        btn_First.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnFirstActionPerformed(evt);
+                btn_FirstActionPerformed(evt);
             }
         });
 
-        btnSecond.setText("Second button");
-        btnSecond.addActionListener(new java.awt.event.ActionListener() {
+        btn_Second.setText("Second button");
+        btn_Second.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSecondActionPerformed(evt);
+                btn_SecondActionPerformed(evt);
             }
         });
 
@@ -65,10 +60,10 @@ public class Askisi1_1 extends javax.swing.JFrame {
                 .addGap(62, 62, 62)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnFirst)
+                        .addComponent(btn_First)
                         .addGap(39, 39, 39)
-                        .addComponent(btnSecond))
-                    .addComponent(lblMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btn_Second))
+                    .addComponent(lbl_Message, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(64, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -76,31 +71,26 @@ public class Askisi1_1 extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(52, 52, 52)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnFirst)
-                    .addComponent(btnSecond))
+                    .addComponent(btn_First)
+                    .addComponent(btn_Second))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 130, Short.MAX_VALUE)
-                .addComponent(lblMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lbl_Message, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(66, 66, 66))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnFirstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFirstActionPerformed
+    private void btn_FirstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_FirstActionPerformed
         // TODO add your handling code here:
-        lblMessage.setText("First button pressed.");
-    }//GEN-LAST:event_btnFirstActionPerformed
+        lbl_Message.setText("First button pressed.");
+    }//GEN-LAST:event_btn_FirstActionPerformed
 
-    private void btnSecondActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSecondActionPerformed
+    private void btn_SecondActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_SecondActionPerformed
         // TODO add your handling code here:
-        lblMessage.setText("Second button pressed.");
+        lbl_Message.setText("Second button pressed.");
 
-    }//GEN-LAST:event_btnSecondActionPerformed
-
-    private void btnFirstMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFirstMouseClicked
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_btnFirstMouseClicked
+    }//GEN-LAST:event_btn_SecondActionPerformed
 
     /**
      * @param args the command line arguments
@@ -139,8 +129,8 @@ public class Askisi1_1 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnFirst;
-    private javax.swing.JButton btnSecond;
-    private javax.swing.JLabel lblMessage;
+    private javax.swing.JButton btn_First;
+    private javax.swing.JButton btn_Second;
+    private javax.swing.JLabel lbl_Message;
     // End of variables declaration//GEN-END:variables
 }
