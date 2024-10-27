@@ -13,7 +13,7 @@ public class Askisi2_1 extends javax.swing.JFrame {
     /**
      * Creates new form Askisi2_1
      */
-//    @SuppressWarnings("OverridableMethodCallInConstructor")
+    @SuppressWarnings("OverridableMethodCallInConstructor")
     public Askisi2_1() {
         initComponents();
         getRootPane().setDefaultButton(btn_Equal);
@@ -466,6 +466,8 @@ public class Askisi2_1 extends javax.swing.JFrame {
 //        buttonsState = false;
         dotAdded = false;
         tmpNumber1 = 0;
+        tmpNumber2 = 0;
+        tmpResult = 0;
         txtfld_CalcBox.setText("");
     }//GEN-LAST:event_btn_CActionPerformed
 
@@ -558,7 +560,7 @@ public class Askisi2_1 extends javax.swing.JFrame {
     }
 //    boolean buttonsState = false;
     boolean dotAdded = false;
-    double tmpNumber1, tmpNumber2 = 0;
+    double tmpNumber1, tmpNumber2, tmpResultx = 0;
     byte actionPressed = 0;
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
