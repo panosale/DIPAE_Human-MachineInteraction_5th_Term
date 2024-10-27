@@ -325,10 +325,9 @@ public class Askisi2_1 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void addNumber2CalcBox(int num) {
-        if (actionPressed != 0) {
-            txtfld_CalcBox.setText("");
-        }
-            
+//        if (signPressed != 0) {
+//            txtfld_CalcBox.setText("");
+//        }
         txtfld_CalcBox.setText(txtfld_CalcBox.getText() + num);        
     }
     private void action2Perform(short actionID, String num) {
@@ -337,26 +336,26 @@ public class Askisi2_1 extends javax.swing.JFrame {
             switch (actionID) {
                     case 1 -> { 
                         txtfld_CalcBox.setText("+");
-                        actionPressed = 1;
+                        signPressed = 1;
                 }
                     case 2 -> { 
                         txtfld_CalcBox.setText("-");
-                        actionPressed = 2;
+                        signPressed = 2;
                 }
                     case 3 -> {
                         txtfld_CalcBox.setText("*");
-                        actionPressed = 3;
+                        signPressed = 3;
                 }
                     case 4 -> {
                         txtfld_CalcBox.setText("/");
-                        actionPressed = 4;
+                        signPressed = 4;
                 }
             }
         }
         else {
-            if (actionPressed != 0) {
+            if (signPressed != 0) {
                 tmpNumber2 = Double.valueOf(txtfld_CalcBox.getText());
-                switch (actionPressed) {
+                switch (signPressed) {
                         case 1: 
                             txtfld_CalcBox.setText(String.valueOf(tmpNumber1 + tmpNumber2));
                             break;
@@ -473,22 +472,38 @@ public class Askisi2_1 extends javax.swing.JFrame {
 
     private void btn_PlusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_PlusActionPerformed
         // TODO add your handling code here:
-        action2Perform((short)1, txtfld_CalcBox.getText());
+//        action2Perform((short)1, txtfld_CalcBox.getText());
+        signPressed = 1;
+        tmpNumber1 = Double.parseDouble(txtfld_CalcBox.getText());
+        txtfld_CalcBox.setText("");
+        dotAdded = false;
     }//GEN-LAST:event_btn_PlusActionPerformed
 
     private void btn_MinusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_MinusActionPerformed
         // TODO add your handling code here:
-        action2Perform((short)2, txtfld_CalcBox.getText());
+//        action2Perform((short)2, txtfld_CalcBox.getText());
+        signPressed = 2;
+        tmpNumber1 = Double.parseDouble(txtfld_CalcBox.getText());
+        txtfld_CalcBox.setText("");
+        dotAdded = false;
     }//GEN-LAST:event_btn_MinusActionPerformed
 
     private void btn_MultiplyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_MultiplyActionPerformed
         // TODO add your handling code here:
-        action2Perform((short)3, txtfld_CalcBox.getText());
+//        action2Perform((short)3, txtfld_CalcBox.getText());
+        signPressed = 3;
+        tmpNumber1 = Double.parseDouble(txtfld_CalcBox.getText());
+        txtfld_CalcBox.setText("");
+        dotAdded = false;
     }//GEN-LAST:event_btn_MultiplyActionPerformed
 
     private void btn_DivisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_DivisionActionPerformed
         // TODO add your handling code here:
-        action2Perform((short)4, txtfld_CalcBox.getText());
+//        action2Perform((short)4, txtfld_CalcBox.getText());
+        signPressed = 4;
+        tmpNumber1 = Double.parseDouble(txtfld_CalcBox.getText());
+        txtfld_CalcBox.setText("");
+        dotAdded = false;
     }//GEN-LAST:event_btn_DivisionActionPerformed
 
     private void btn_DotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_DotActionPerformed
@@ -502,11 +517,38 @@ public class Askisi2_1 extends javax.swing.JFrame {
 
     private void btn_EqualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_EqualActionPerformed
         // TODO add your handling code here:
-        if (!txtfld_CalcBox.getText().isEmpty()) {
-            action2Perform((short)5, txtfld_CalcBox.getText());
-            return;
+        String tmpStr = txtfld_CalcBox.getText();
+        if (tmpStr.isEmpty()) {
+            if (tmpNumber1 != 0)
+                txtfld_CalcBox.setText(String.valueOf(tmpNumber1));
+            else
+                if (tmpNumber1 == 0)
+                    txtfld_CalcBox.setText("0.0");
         }
-        txtfld_CalcBox.setText("0");
+        else {
+            tmpNumber2 = Double.valueOf(tmpStr);
+            switch (signPressed) {
+                case 1: tmpResult = tmpNumber1 + tmpNumber2;
+                    txtfld_CalcBox.setText(String.valueOf(tmpResult));
+                    break;
+                case 2: tmpResult = tmpNumber1 - tmpNumber2;
+                    txtfld_CalcBox.setText(String.valueOf(tmpResult));
+                    break;
+                case 3: tmpResult = tmpNumber1 * tmpNumber2;
+                    txtfld_CalcBox.setText(String.valueOf(tmpResult));
+                    break;
+                case 4: if (tmpNumber2 == 0)
+                            txtfld_CalcBox.setText("Dev by zero!");
+                        else {
+                            tmpResult = tmpNumber1 / tmpNumber2;
+                            txtfld_CalcBox.setText(String.valueOf(tmpResult));
+                        }
+                    break;
+            }
+        }
+//            action2Perform((short)5, txtfld_CalcBox.getText());
+//            return;
+//        txtfld_CalcBox.setText("0");
     }//GEN-LAST:event_btn_EqualActionPerformed
 
     private void btn_9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_9ActionPerformed
@@ -560,8 +602,8 @@ public class Askisi2_1 extends javax.swing.JFrame {
     }
 //    boolean buttonsState = false;
     boolean dotAdded = false;
-    double tmpNumber1, tmpNumber2, tmpResultx = 0;
-    byte actionPressed = 0;
+    double tmpNumber1, tmpNumber2, tmpResult = 0;
+    byte signPressed = 0; // 1 = Plus, 2 = Minus, 3 = Times, 4 = Div
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_0;
