@@ -13,8 +13,10 @@ public class Askisi2_1 extends javax.swing.JFrame {
     /**
      * Creates new form Askisi2_1
      */
+//    @SuppressWarnings("OverridableMethodCallInConstructor")
     public Askisi2_1() {
         initComponents();
+        getRootPane().setDefaultButton(btn_Equal);
     }
 
     /**
@@ -49,9 +51,11 @@ public class Askisi2_1 extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Calculator");
+        setLocation(new java.awt.Point(500, 300));
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
-        txtfld_CalcBox.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
+        txtfld_CalcBox.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
+        txtfld_CalcBox.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         txtfld_CalcBox.setEnabled(false);
         txtfld_CalcBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -61,7 +65,7 @@ public class Askisi2_1 extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 8;
+        gridBagConstraints.gridwidth = 5;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         getContentPane().add(txtfld_CalcBox, gridBagConstraints);
 
@@ -76,7 +80,6 @@ public class Askisi2_1 extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridwidth = 3;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         getContentPane().add(btn_1, gridBagConstraints);
 
@@ -89,9 +92,8 @@ public class Askisi2_1 extends javax.swing.JFrame {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         getContentPane().add(btn_2, gridBagConstraints);
 
@@ -104,10 +106,8 @@ public class Askisi2_1 extends javax.swing.JFrame {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 5;
+        gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         getContentPane().add(btn_3, gridBagConstraints);
 
         btn_4.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
@@ -121,7 +121,6 @@ public class Askisi2_1 extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 3;
-        gridBagConstraints.gridwidth = 3;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         getContentPane().add(btn_4, gridBagConstraints);
 
@@ -134,9 +133,8 @@ public class Askisi2_1 extends javax.swing.JFrame {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 3;
-        gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         getContentPane().add(btn_5, gridBagConstraints);
 
@@ -149,10 +147,8 @@ public class Askisi2_1 extends javax.swing.JFrame {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 5;
+        gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 3;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         getContentPane().add(btn_6, gridBagConstraints);
 
         btn_7.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
@@ -166,7 +162,6 @@ public class Askisi2_1 extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 3;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         getContentPane().add(btn_7, gridBagConstraints);
 
@@ -179,9 +174,8 @@ public class Askisi2_1 extends javax.swing.JFrame {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         getContentPane().add(btn_8, gridBagConstraints);
 
@@ -196,7 +190,7 @@ public class Askisi2_1 extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 5;
+        gridBagConstraints.gridwidth = 4;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         getContentPane().add(btn_Power, gridBagConstraints);
 
@@ -211,7 +205,6 @@ public class Askisi2_1 extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 5;
-        gridBagConstraints.gridwidth = 3;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         getContentPane().add(btn_0, gridBagConstraints);
 
@@ -224,10 +217,8 @@ public class Askisi2_1 extends javax.swing.JFrame {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 5;
+        gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         getContentPane().add(btn_9, gridBagConstraints);
 
         btn_C.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
@@ -240,7 +231,7 @@ public class Askisi2_1 extends javax.swing.JFrame {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 7;
+        gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 1;
         getContentPane().add(btn_C, gridBagConstraints);
 
@@ -254,7 +245,7 @@ public class Askisi2_1 extends javax.swing.JFrame {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 7;
+        gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 2;
         getContentPane().add(btn_Plus, gridBagConstraints);
 
@@ -268,7 +259,7 @@ public class Askisi2_1 extends javax.swing.JFrame {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 7;
+        gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 3;
         getContentPane().add(btn_Minus, gridBagConstraints);
 
@@ -282,7 +273,7 @@ public class Askisi2_1 extends javax.swing.JFrame {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 7;
+        gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 4;
         getContentPane().add(btn_Multiply, gridBagConstraints);
 
@@ -296,7 +287,7 @@ public class Askisi2_1 extends javax.swing.JFrame {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 7;
+        gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 5;
         getContentPane().add(btn_Division, gridBagConstraints);
 
@@ -310,9 +301,9 @@ public class Askisi2_1 extends javax.swing.JFrame {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 5;
+        gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 5;
-        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         getContentPane().add(btn_Equal, gridBagConstraints);
 
         btn_Dot.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
@@ -325,9 +316,8 @@ public class Askisi2_1 extends javax.swing.JFrame {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 5;
-        gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         getContentPane().add(btn_Dot, gridBagConstraints);
 
@@ -381,9 +371,9 @@ public class Askisi2_1 extends javax.swing.JFrame {
                         }
                                 else
                                     txtfld_CalcBox.setText(String.valueOf(tmpNumber1 / tmpNumber2));
-                        break;
-
+                            break;
                 }
+                tmpNumber1 = tmpNumber2 = 0;
             }
         }
     }
@@ -397,11 +387,6 @@ public class Askisi2_1 extends javax.swing.JFrame {
         addNumber2CalcBox(2);
     }//GEN-LAST:event_btn_2ActionPerformed
 
-    private void btn_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_3ActionPerformed
-        // TODO add your handling code here:
-        addNumber2CalcBox(3);
-    }//GEN-LAST:event_btn_3ActionPerformed
-
     private void btn_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_4ActionPerformed
         // TODO add your handling code here:
         addNumber2CalcBox(4);
@@ -411,11 +396,6 @@ public class Askisi2_1 extends javax.swing.JFrame {
         // TODO add your handling code here:
         addNumber2CalcBox(5);
     }//GEN-LAST:event_btn_5ActionPerformed
-
-    private void btn_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_6ActionPerformed
-        // TODO add your handling code here:
-        addNumber2CalcBox(6);
-    }//GEN-LAST:event_btn_6ActionPerformed
 
     private void btn_7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_7ActionPerformed
         // TODO add your handling code here:
@@ -429,29 +409,47 @@ public class Askisi2_1 extends javax.swing.JFrame {
 
     private void btn_PowerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_PowerActionPerformed
         // TODO add your handling code here:
-        buttonsState = !buttonsState;
-        txtfld_CalcBox.setEnabled(buttonsState);
-        btn_0.setEnabled(buttonsState);
-        btn_1.setEnabled(buttonsState);
-        btn_2.setEnabled(buttonsState);
-        btn_3.setEnabled(buttonsState);
-        btn_4.setEnabled(buttonsState);
-        btn_5.setEnabled(buttonsState);
-        btn_6.setEnabled(buttonsState);
-        btn_7.setEnabled(buttonsState);
-        btn_8.setEnabled(buttonsState);
-        btn_9.setEnabled(buttonsState);
-        btn_C.setEnabled(buttonsState);
-        btn_Plus.setEnabled(buttonsState);
-        btn_Minus.setEnabled(buttonsState);
-        btn_Multiply.setEnabled(buttonsState);
-        btn_Division.setEnabled(buttonsState);
-        btn_Equal.setEnabled(buttonsState);
-        btn_Dot.setEnabled(buttonsState);
-        if (!buttonsState) {
-            dotAdded = false;
-            txtfld_CalcBox.setText("");
-        }
+        txtfld_CalcBox.setEnabled(!txtfld_CalcBox.isEnabled());
+        btn_0.setEnabled(!btn_0.isEnabled());
+        btn_1.setEnabled(!btn_1.isEnabled());
+        btn_2.setEnabled(!btn_2.isEnabled());
+        btn_3.setEnabled(!btn_3.isEnabled());
+        btn_4.setEnabled(!btn_4.isEnabled());
+        btn_5.setEnabled(!btn_5.isEnabled());
+        btn_6.setEnabled(!btn_6.isEnabled());
+        btn_7.setEnabled(!btn_7.isEnabled());
+        btn_8.setEnabled(!btn_8.isEnabled());
+        btn_9.setEnabled(!btn_9.isEnabled());
+        btn_C.setEnabled(!btn_C.isEnabled());
+        btn_Plus.setEnabled(!btn_Plus.isEnabled());
+        btn_Minus.setEnabled(!btn_Minus.isEnabled());
+        btn_Multiply.setEnabled(!btn_Multiply.isEnabled());
+        btn_Division.setEnabled(!btn_Division.isEnabled());
+        btn_Dot.setEnabled(!btn_Dot.isEnabled());
+        btn_Equal.setEnabled(!btn_Equal.isEnabled());
+//        buttonsState = !buttonsState;
+//        txtfld_CalcBox.setEnabled(buttonsState);
+//        btn_0.setEnabled(buttonsState);
+//        btn_1.setEnabled(buttonsState);
+//        btn_2.setEnabled(buttonsState);
+//        btn_3.setEnabled(buttonsState);
+//        btn_4.setEnabled(buttonsState);
+//        btn_5.setEnabled(buttonsState);
+//        btn_6.setEnabled(buttonsState);
+//        btn_7.setEnabled(buttonsState);
+//        btn_8.setEnabled(buttonsState);
+//        btn_9.setEnabled(buttonsState);
+//        btn_C.setEnabled(buttonsState);
+//        btn_Plus.setEnabled(buttonsState);
+//        btn_Minus.setEnabled(buttonsState);
+//        btn_Multiply.setEnabled(buttonsState);
+//        btn_Division.setEnabled(buttonsState);
+//        btn_Equal.setEnabled(buttonsState);
+//        btn_Dot.setEnabled(buttonsState);
+//        if (!buttonsState) {
+//            dotAdded = false;
+//            txtfld_CalcBox.setText("");
+//        }
     }//GEN-LAST:event_btn_PowerActionPerformed
 
     private void btn_0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_0ActionPerformed
@@ -463,14 +461,9 @@ public class Askisi2_1 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtfld_CalcBoxActionPerformed
 
-    private void btn_9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_9ActionPerformed
-        // TODO add your handling code here:
-        addNumber2CalcBox(9);
-    }//GEN-LAST:event_btn_9ActionPerformed
-
     private void btn_CActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CActionPerformed
         // TODO add your handling code here:
-        buttonsState = false;
+//        buttonsState = false;
         dotAdded = false;
         tmpNumber1 = 0;
         txtfld_CalcBox.setText("");
@@ -496,14 +489,6 @@ public class Askisi2_1 extends javax.swing.JFrame {
         action2Perform((short)4, txtfld_CalcBox.getText());
     }//GEN-LAST:event_btn_DivisionActionPerformed
 
-    private void btn_EqualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_EqualActionPerformed
-        // TODO add your handling code here:
-        if (!txtfld_CalcBox.getText().isEmpty())
-            action2Perform((short)5, txtfld_CalcBox.getText());
-        else
-            txtfld_CalcBox.setText("0");
-    }//GEN-LAST:event_btn_EqualActionPerformed
-
     private void btn_DotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_DotActionPerformed
         // TODO add your handling code here:
         if (!dotAdded) {
@@ -512,6 +497,30 @@ public class Askisi2_1 extends javax.swing.JFrame {
         }
             
     }//GEN-LAST:event_btn_DotActionPerformed
+
+    private void btn_EqualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_EqualActionPerformed
+        // TODO add your handling code here:
+        if (!txtfld_CalcBox.getText().isEmpty()) {
+            action2Perform((short)5, txtfld_CalcBox.getText());
+            return;
+        }
+        txtfld_CalcBox.setText("0");
+    }//GEN-LAST:event_btn_EqualActionPerformed
+
+    private void btn_9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_9ActionPerformed
+        // TODO add your handling code here:
+        addNumber2CalcBox(9);
+    }//GEN-LAST:event_btn_9ActionPerformed
+
+    private void btn_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_6ActionPerformed
+        // TODO add your handling code here:
+        addNumber2CalcBox(6);
+    }//GEN-LAST:event_btn_6ActionPerformed
+
+    private void btn_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_3ActionPerformed
+        // TODO add your handling code here:
+        addNumber2CalcBox(3);
+    }//GEN-LAST:event_btn_3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -547,7 +556,7 @@ public class Askisi2_1 extends javax.swing.JFrame {
             }
         });
     }
-    boolean buttonsState = false;
+//    boolean buttonsState = false;
     boolean dotAdded = false;
     double tmpNumber1, tmpNumber2 = 0;
     byte actionPressed = 0;
