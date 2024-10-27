@@ -52,6 +52,11 @@ public class Askisi2_1 extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Calculator");
         setLocation(new java.awt.Point(500, 300));
+        addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                formKeyTyped(evt);
+            }
+        });
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
         txtfld_CalcBox.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
@@ -565,6 +570,10 @@ public class Askisi2_1 extends javax.swing.JFrame {
         // TODO add your handling code here:
         addNumber2CalcBox(3);
     }//GEN-LAST:event_btn_3ActionPerformed
+
+    private void formKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyTyped
+        txtfld_CalcBox.setText(String.valueOf(evt));        // TODO add your handling code here:
+    }//GEN-LAST:event_formKeyTyped
 
     /**
      * @param args the command line arguments
