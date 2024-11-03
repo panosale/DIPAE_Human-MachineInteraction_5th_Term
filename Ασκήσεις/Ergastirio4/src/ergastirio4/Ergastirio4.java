@@ -4,13 +4,16 @@
  */
 package ergastirio4;
 
+import java.util.HashSet;
 import java.util.Hashtable;
+import java.util.Set;
 import javax.swing.JLabel;
 
 /**
  *
  * @author Panagiotis
  */
+    
 public class Ergastirio4 extends javax.swing.JFrame {
 
     /**
@@ -18,6 +21,7 @@ public class Ergastirio4 extends javax.swing.JFrame {
      */
     public Ergastirio4() {
         initComponents();
+        setupPresets();
     }
 
     /**
@@ -32,70 +36,33 @@ public class Ergastirio4 extends javax.swing.JFrame {
 
         btngrp_1 = new javax.swing.ButtonGroup();
         lbl_Bass = new javax.swing.JLabel();
-        lbl_Midrange = new javax.swing.JLabel();
-        lbl_Tremble = new javax.swing.JLabel();
-        lbl_Balance = new javax.swing.JLabel();
-        lbl_Volume = new javax.swing.JLabel();
-        lbl_Info = new javax.swing.JLabel();
         sldr_Bass = new javax.swing.JSlider();
-        sldr_Tremble = new javax.swing.JSlider();
-        sldr_Balance = new javax.swing.JSlider();
-        sldr_Volume = new javax.swing.JSlider();
+        lbl_Midrange = new javax.swing.JLabel();
         sldr_Midrange = new javax.swing.JSlider();
+        lbl_Tremble = new javax.swing.JLabel();
+        sldr_Tremble = new javax.swing.JSlider();
+        lbl_Balance = new javax.swing.JLabel();
+        sldr_Balance = new javax.swing.JSlider();
+        lbl_Volume = new javax.swing.JLabel();
+        sldr_Volume = new javax.swing.JSlider();
         rdbtn_M0 = new javax.swing.JRadioButton();
         rdbtn_M1 = new javax.swing.JRadioButton();
         rdbtn_M2 = new javax.swing.JRadioButton();
         btn_Store = new javax.swing.JButton();
+        lbl_Info = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Audio Player");
         setLocation(new java.awt.Point(500, 400));
         setLocationByPlatform(true);
+        setMinimumSize(new java.awt.Dimension(550, 600));
+        setPreferredSize(new java.awt.Dimension(550, 600));
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
         lbl_Bass.setText("Bass");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         getContentPane().add(lbl_Bass, gridBagConstraints);
-
-        lbl_Midrange.setText("Midrange");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        getContentPane().add(lbl_Midrange, gridBagConstraints);
-
-        lbl_Tremble.setText("Tremble");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        getContentPane().add(lbl_Tremble, gridBagConstraints);
-
-        lbl_Balance.setText("Balance");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        getContentPane().add(lbl_Balance, gridBagConstraints);
-
-        lbl_Volume.setText("Volume");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        getContentPane().add(lbl_Volume, gridBagConstraints);
-
-        lbl_Info.setText("Bass: 0");
-        lbl_Info.setPreferredSize(new java.awt.Dimension(30, 35));
-        lbl_Info.setRequestFocusEnabled(false);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.gridheight = 3;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.insets = new java.awt.Insets(0, 10, 0, 0);
-        getContentPane().add(lbl_Info, gridBagConstraints);
 
         sldr_Bass.setMajorTickSpacing(2);
         sldr_Bass.setMaximum(10);
@@ -104,21 +71,69 @@ public class Ergastirio4 extends javax.swing.JFrame {
         sldr_Bass.setPaintLabels(true);
         sldr_Bass.setPaintTicks(true);
         sldr_Bass.setValue(0);
+        sldr_Bass.setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 10, 10, 10));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridwidth = 2;
         getContentPane().add(sldr_Bass, gridBagConstraints);
+
+        lbl_Midrange.setText("Midrange");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        getContentPane().add(lbl_Midrange, gridBagConstraints);
+
+        sldr_Midrange.setMajorTickSpacing(2);
+        sldr_Midrange.setMaximum(10);
+        sldr_Midrange.setMinimum(-10);
+        sldr_Midrange.setMinorTickSpacing(1);
+        sldr_Midrange.setPaintLabels(true);
+        sldr_Midrange.setPaintTicks(true);
+        sldr_Midrange.setValue(0);
+        sldr_Midrange.setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 10, 10, 10));
+        sldr_Midrange.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                sldr_MidrangeStateChanged(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 2;
+        getContentPane().add(sldr_Midrange, gridBagConstraints);
+
+        lbl_Tremble.setText("Tremble");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        getContentPane().add(lbl_Tremble, gridBagConstraints);
 
         sldr_Tremble.setMajorTickSpacing(2);
         sldr_Tremble.setMaximum(10);
         sldr_Tremble.setMinimum(-10);
         sldr_Tremble.setPaintLabels(true);
         sldr_Tremble.setPaintTicks(true);
+        sldr_Tremble.setToolTipText("");
         sldr_Tremble.setValue(0);
+        sldr_Tremble.setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 10, 10, 10));
+        sldr_Tremble.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                sldr_TrembleStateChanged(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.gridwidth = 2;
         getContentPane().add(sldr_Tremble, gridBagConstraints);
+
+        lbl_Balance.setText("Balance");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        getContentPane().add(lbl_Balance, gridBagConstraints);
 
         table.put(new Integer(0), new JLabel("Center"));
         table.put(new Integer(-5), new JLabel("L"));
@@ -131,67 +146,152 @@ public class Ergastirio4 extends javax.swing.JFrame {
         sldr_Balance.setPaintLabels(true);
         sldr_Balance.setPaintTicks(true);
         sldr_Balance.setValue(0);
+        sldr_Balance.setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 10, 10, 10));
+        sldr_Balance.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                sldr_BalanceStateChanged(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 3;
         gridBagConstraints.gridwidth = 2;
         getContentPane().add(sldr_Balance, gridBagConstraints);
 
+        lbl_Volume.setText("Volume");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        getContentPane().add(lbl_Volume, gridBagConstraints);
+
         sldr_Volume.setMajorTickSpacing(1);
         sldr_Volume.setMaximum(10);
         sldr_Volume.setPaintLabels(true);
         sldr_Volume.setPaintTicks(true);
         sldr_Volume.setValue(0);
+        sldr_Volume.setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 10, 10, 10));
+        sldr_Volume.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                sldr_VolumeStateChanged(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 4;
         gridBagConstraints.gridwidth = 2;
         getContentPane().add(sldr_Volume, gridBagConstraints);
 
-        sldr_Midrange.setMajorTickSpacing(2);
-        sldr_Midrange.setMaximum(10);
-        sldr_Midrange.setMinimum(-10);
-        sldr_Midrange.setMinorTickSpacing(1);
-        sldr_Midrange.setPaintLabels(true);
-        sldr_Midrange.setPaintTicks(true);
-        sldr_Midrange.setValue(0);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 2;
-        getContentPane().add(sldr_Midrange, gridBagConstraints);
-
         btngrp_1.add(rdbtn_M0);
         rdbtn_M0.setSelected(true);
         rdbtn_M0.setText("M0");
+        rdbtn_M0.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                rdbtn_M0ItemStateChanged(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 5;
+        gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
         getContentPane().add(rdbtn_M0, gridBagConstraints);
 
         btngrp_1.add(rdbtn_M1);
         rdbtn_M1.setText("M1");
+        rdbtn_M1.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                rdbtn_M1ItemStateChanged(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 5;
+        gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
         getContentPane().add(rdbtn_M1, gridBagConstraints);
 
         btngrp_1.add(rdbtn_M2);
         rdbtn_M2.setText("M2");
+        rdbtn_M2.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                rdbtn_M2ItemStateChanged(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 5;
+        gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
         getContentPane().add(rdbtn_M2, gridBagConstraints);
 
         btn_Store.setText("Store");
+        btn_Store.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_StoreActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 6;
+        gridBagConstraints.insets = new java.awt.Insets(30, 30, 30, 0);
         getContentPane().add(btn_Store, gridBagConstraints);
+
+        lbl_Info.setText("Bass: 0");
+        lbl_Info.setPreferredSize(new java.awt.Dimension(30, 35));
+        lbl_Info.setRequestFocusEnabled(false);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridheight = 5;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.insets = new java.awt.Insets(0, 10, 0, 0);
+        getContentPane().add(lbl_Info, gridBagConstraints);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void sldr_MidrangeStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_sldr_MidrangeStateChanged
+        // TODO add your handling code here:
+        showSliderValues();
+    }//GEN-LAST:event_sldr_MidrangeStateChanged
+
+    private void sldr_TrembleStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_sldr_TrembleStateChanged
+        // TODO add your handling code here:
+        showSliderValues();
+    }//GEN-LAST:event_sldr_TrembleStateChanged
+
+    private void sldr_BalanceStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_sldr_BalanceStateChanged
+        // TODO add your handling code here:
+        showSliderValues();
+    }//GEN-LAST:event_sldr_BalanceStateChanged
+
+    private void sldr_VolumeStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_sldr_VolumeStateChanged
+        // TODO add your handling code here:
+        showSliderValues();
+    }//GEN-LAST:event_sldr_VolumeStateChanged
+
+    private void rdbtn_M2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_rdbtn_M2ItemStateChanged
+        // TODO add your handling code here:
+        loadPresets(presetsMemory[2]);
+    }//GEN-LAST:event_rdbtn_M2ItemStateChanged
+
+    private void rdbtn_M1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_rdbtn_M1ItemStateChanged
+        // TODO add your handling code here:
+        loadPresets(presetsMemory[1]);
+    }//GEN-LAST:event_rdbtn_M1ItemStateChanged
+
+    private void rdbtn_M0ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_rdbtn_M0ItemStateChanged
+        // TODO add your handling code here:
+        loadPresets(presetsMemory[0]);
+    }//GEN-LAST:event_rdbtn_M0ItemStateChanged
+
+    private void btn_StoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_StoreActionPerformed
+        // TODO add your handling code here:
+        if (rdbtn_M0.isSelected())
+            storePresets(presetsMemory[0]);
+        else if (rdbtn_M1.isSelected())
+            storePresets(presetsMemory[1]);
+        else if (rdbtn_M2.isSelected())
+            storePresets(presetsMemory[2]);
+    }//GEN-LAST:event_btn_StoreActionPerformed
     /**
      * @param args the command line arguments
      */
@@ -227,7 +327,46 @@ public class Ergastirio4 extends javax.swing.JFrame {
         });
     }
     
+    void setupPresets() {
+        presetsMemory[0] = new Presets(0, 0, 0, 0, 0);
+        presetsMemory[1] = new Presets(1, -1, 9, 0, 4);
+        presetsMemory[2] = new Presets(2, 4, -2, 4, 2);
+    }
+    
+    void showSliderValues() {
+        String tmpBalance;
+        int b = sldr_Balance.getValue();
+        if (b > 0)
+            tmpBalance = "Right " + String.valueOf(b);
+        else if (b == 0)
+            tmpBalance = "Center " + String.valueOf(b);
+        else
+            tmpBalance = "Left " + String.valueOf(-b);
+        lbl_Info.setText("<html> Bass: " + sldr_Bass.getValue() + 
+                "<br> Midrange: " + sldr_Midrange.getValue() + 
+                "<br> Tremble: " + sldr_Tremble.getValue() + 
+                "<br> Balance: " + tmpBalance + 
+                "<br> Volume: " + sldr_Volume.getValue());
+    }
+    
+    void loadPresets(Presets newPreset) {
+        sldr_Bass.setValue(newPreset.getBassValue());
+        sldr_Midrange.setValue(newPreset.getMidrangeValue());
+        sldr_Tremble.setValue(newPreset.getTrembleValue());
+        sldr_Balance.setValue(newPreset.getBalanceValue());
+        sldr_Volume.setValue(newPreset.getVolumeValue());
+        showSliderValues();
+    }
+    
+    void storePresets(Presets newPresets) {
+        newPresets.setBassValue(sldr_Bass.getValue());
+        newPresets.setMidrangeValue(sldr_Midrange.getValue());
+        newPresets.setTrembleValue(sldr_Tremble.getValue());
+        newPresets.setBalanceValue(sldr_Balance.getValue());
+        newPresets.setVolumeValue(sldr_Volume.getValue());
+    }
     Hashtable table = new Hashtable();
+    static Presets[] presetsMemory = new Presets[3];
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_Store;
