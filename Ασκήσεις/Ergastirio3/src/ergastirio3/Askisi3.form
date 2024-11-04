@@ -144,7 +144,12 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
+            <Property name="displayedMnemonic" type="int" value="75"/>
+            <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+              <ComponentRef name="txtfld_Kefalaio"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="&#x39a;&#x3b5;&#x3c6;&#x3ac;&#x3bb;&#x3b1;&#x3b9;&#x3bf;:"/>
+            <Property name="displayedMnemonicIndex" type="int" value="0"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtfld_Kefalaio">
@@ -155,7 +160,12 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
+            <Property name="displayedMnemonic" type="int" value="69"/>
+            <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+              <ComponentRef name="txtfld_Epitokio"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="&#x395;&#x3c0;&#x3b9;&#x3c4;&#x3cc;&#x3ba;&#x3b9;&#x3bf;:"/>
+            <Property name="displayedMnemonicIndex" type="int" value="0"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtfld_Epitokio">
@@ -166,7 +176,12 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
+            <Property name="displayedMnemonic" type="int" value="68"/>
+            <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+              <ComponentRef name="txtfld_Diarkeia"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="&#x394;&#x3b9;&#x3ac;&#x3c1;&#x3ba;&#x3b5;&#x3b9;&#x3b1;:"/>
+            <Property name="displayedMnemonicIndex" type="int" value="0"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtfld_Diarkeia">
@@ -238,6 +253,7 @@
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
               <ComponentRef name="btngrp_Houses"/>
             </Property>
+            <Property name="mnemonic" type="int" value="49"/>
             <Property name="selected" type="boolean" value="true"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
@@ -269,6 +285,7 @@
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
               <ComponentRef name="btngrp_Houses"/>
             </Property>
+            <Property name="mnemonic" type="int" value="50"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
                 <EtchetBorder/>
@@ -299,6 +316,7 @@
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
               <ComponentRef name="btngrp_Houses"/>
             </Property>
+            <Property name="mnemonic" type="int" value="51"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
                 <EtchetBorder/>
@@ -338,8 +356,10 @@
     </Container>
     <Component class="javax.swing.JButton" name="btn_YpologismosDosis">
       <Properties>
+        <Property name="mnemonic" type="int" value="89"/>
         <Property name="text" type="java.lang.String" value="&#x3a5;&#x3c0;&#x3bf;&#x3bb;&#x3bf;&#x3b3;&#x3b9;&#x3c3;&#x3bc;&#x3cc;&#x3c2; &#x3b4;&#x3cc;&#x3c3;&#x3b7;&#x3c2;"/>
         <Property name="actionCommand" type="java.lang.String" value="&#x3a5;&#x3c0;&#x3bf;&#x3bb;&#x3bf;&#x3b3;&#x3b9;&#x3c3;&#x3bc;&#x3cc;&#x3c2; &#x394;&#x3cc;&#x3c3;&#x3b7;&#x3c2;"/>
+        <Property name="displayedMnemonicIndex" type="int" value="0"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_YpologismosDosisActionPerformed"/>

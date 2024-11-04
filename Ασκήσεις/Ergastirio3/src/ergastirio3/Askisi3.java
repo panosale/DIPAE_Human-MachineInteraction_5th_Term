@@ -54,17 +54,26 @@ public class Askisi3 extends javax.swing.JFrame {
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Στοιχεία Δανείου"));
         jPanel2.setForeground(new java.awt.Color(220, 220, 220));
 
+        jLabel1.setDisplayedMnemonic('K');
+        jLabel1.setLabelFor(txtfld_Kefalaio);
         jLabel1.setText("Κεφάλαιο:");
+        jLabel1.setDisplayedMnemonicIndex(0);
 
         txtfld_Kefalaio.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         txtfld_Kefalaio.setText("0");
 
+        jLabel2.setDisplayedMnemonic('E');
+        jLabel2.setLabelFor(txtfld_Epitokio);
         jLabel2.setText("Επιτόκιο:");
+        jLabel2.setDisplayedMnemonicIndex(0);
 
         txtfld_Epitokio.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         txtfld_Epitokio.setText("0");
 
+        jLabel3.setDisplayedMnemonic('D');
+        jLabel3.setLabelFor(txtfld_Diarkeia);
         jLabel3.setText("Διάρκεια:");
+        jLabel3.setDisplayedMnemonicIndex(0);
 
         txtfld_Diarkeia.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         txtfld_Diarkeia.setText("0");
@@ -114,6 +123,7 @@ public class Askisi3 extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Διαθέσιμα Σπίτια"));
 
         btngrp_Houses.add(rbtn_House1);
+        rbtn_House1.setMnemonic('1');
         rbtn_House1.setSelected(true);
         rbtn_House1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         rbtn_House1.setBorderPainted(true);
@@ -136,6 +146,7 @@ public class Askisi3 extends javax.swing.JFrame {
         });
 
         btngrp_Houses.add(rbtn_House2);
+        rbtn_House2.setMnemonic('2');
         rbtn_House2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         rbtn_House2.setBorderPainted(true);
         rbtn_House2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ergastirio3/queen_house.jpg"))); // NOI18N
@@ -157,6 +168,7 @@ public class Askisi3 extends javax.swing.JFrame {
         });
 
         btngrp_Houses.add(rbtn_House3);
+        rbtn_House3.setMnemonic('3');
         rbtn_House3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         rbtn_House3.setBorderPainted(true);
         rbtn_House3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ergastirio3/white_house.jpg"))); // NOI18N
@@ -213,8 +225,10 @@ public class Askisi3 extends javax.swing.JFrame {
                 .addContainerGap(28, Short.MAX_VALUE))
         );
 
+        btn_YpologismosDosis.setMnemonic('Y');
         btn_YpologismosDosis.setText("Υπολογισμός δόσης");
         btn_YpologismosDosis.setActionCommand("Υπολογισμός Δόσης");
+        btn_YpologismosDosis.setDisplayedMnemonicIndex(0);
         btn_YpologismosDosis.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_YpologismosDosisActionPerformed(evt);
