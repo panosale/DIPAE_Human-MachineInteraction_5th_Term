@@ -26,3 +26,8 @@ INSERT INTO t_Cities (f_CityName, f_CountryID) VALUES ('ROME', 2);
 INSERT INTO t_Cities (f_CityName, f_CountryID) VALUES ('VENICE', 2);
 INSERT INTO t_Cities (f_CityName, f_CountryID) VALUES ('PARIS', 3);
 INSERT INTO t_Cities (f_CityName, f_CountryID) VALUES ('MADRID', 4);
+
+-- TESTS
+-- SELECT t_Cities.f_CityID, t_Cities.f_CityName, t_Countries.f_CountryName AS f_CountryName FROM t_Cities JOIN t_Countries ON t_Cities.f_CountryID = t_Countries.f_CountryID
+-- select * from t_Cities;
+-- select * from t_Countries;
