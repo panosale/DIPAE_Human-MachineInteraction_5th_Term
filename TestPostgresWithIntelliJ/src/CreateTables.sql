@@ -5,7 +5,7 @@ DROP TABLE IF EXISTS t_RoomsCategories;
 CREATE TABLE IF NOT EXISTS t_Countries
 (
     f_CountryID SERIAL UNIQUE,
-    f_CountryName character varying(30) PRIMARY KEY
+    f_CountryName VARCHAR(30) PRIMARY KEY
 );
 
 INSERT INTO t_Countries (f_CountryName) VALUES ('GREECE');
@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS t_Cities
 (
 	f_CityID SERIAL,
 	f_CountryID Integer,
-	f_CityName character varying(30) PRIMARY KEY,
+	f_CityName VARCHAR(30) PRIMARY KEY,
 	FOREIGN KEY (f_CountryID) REFERENCES t_Countries(f_CountryID) ON DELETE RESTRICT
 );
 -- CHECK COUNTRIES IDS BEFORE INSERT THE FOLLOWING LINES
