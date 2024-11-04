@@ -1,5 +1,6 @@
 DROP TABLE IF EXISTS t_Cities;
 DROP TABLE IF EXISTS t_Countries;
+DROP TABLE IF EXISTS t_RoomsCategories;
 
 CREATE TABLE IF NOT EXISTS t_Countries
 (
